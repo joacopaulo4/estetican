@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Estetican · Boutique y peluquería canina en Montevideo</title>
+<meta name="description" content="Estetican: baño, corte y secado para perros, y boutique con ropa y accesorios. Montevideo. Reservá el turno de tu perro por WhatsApp.">
+<meta name="theme-color" content="#cfe6dd">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/pomeranias.webp">
+<style>
+:root{--menta:#cfe6dd;--menta-2:#e8f3ee;--negro:#151515;--gris:#5b6661;--blanco:#fff;--durazno:#f6b89a;
+  --ease-out:cubic-bezier(.16,1,.3,1);--ease-soft:cubic-bezier(.25,.46,.45,.94);--pad:clamp(18px,5vw,64px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--menta-2);color:var(--negro);font:400 17px/1.6 "Nunito",system-ui,sans-serif;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--negro);outline-offset:3px}
+h1,h2,h3{font-family:"Fredoka",system-ui,sans-serif;font-weight:600;line-height:1.05;text-wrap:balance}
+h2{font-size:clamp(2.1rem,6vw,3.6rem);max-width:16ch}
+section{padding:clamp(64px,10vw,120px) var(--pad)}
+
+.nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:12px var(--pad);transition:background .3s,box-shadow .3s}
+.nav.is-scrolled{background:var(--menta-2);box-shadow:0 1px 0 rgba(0,0,0,.07)}
+.logo{display:flex;align-items:center;gap:8px;font:700 1.35rem "Fredoka";text-decoration:none}
+.logo b{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--negro);color:#fff;font-size:1.1rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:999px;background:var(--negro);color:#fff;
+  font:600 1.05rem "Fredoka";text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.1);transition:transform .25s var(--ease-out),box-shadow .45s var(--ease-soft)}
+.btn:active{transform:scale(.97)}
+@media(hover:hover){.btn:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.18)}}
+.btn--sm{min-height:42px;padding:0 18px;font-size:.95rem}
+.btn--soft{background:var(--blanco);color:var(--negro)}
+
+/* Hero */
+.hero{min-height:100vh;min-height:100svh;background:var(--menta);display:grid;gap:30px;align-items:center;padding:96px var(--pad) 48px;position:relative;overflow:hidden}
+@media(min-width:960px){.hero{grid-template-columns:1.1fr .9fr}}
+.hero h1{font-size:clamp(2.8rem,9vw,6rem);margin-bottom:18px}
+.hero h1 span{display:inline-block;animation:pop .8s var(--ease-out) both;animation-delay:calc(.15s + var(--i)*.1s)}
+.hero p{font-size:1.15rem;color:#2c3a34;max-width:34ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;animation:pop .8s var(--ease-out) .6s both}
+.blob{position:relative;justify-self:center;width:min(86vw,440px);aspect-ratio:4/5}
+.blob img{width:100%;height:100%;object-fit:cover;border-radius:46% 54% 42% 58%/52% 44% 56% 48%;box-shadow:0 30px 60px rgba(21,21,21,.15)}
+.paw{position:absolute;font-size:2rem;opacity:.9}
+.paw.a{top:-6px;right:8%;transform:rotate(18deg)}
+.paw.b{bottom:6%;left:-10px;transform:rotate(-20deg)}
+@keyframes pop{from{opacity:0;transform:translateY(.4em) scale(.98)}}
+
+/* Servicios por tamaño */
+.tam{display:grid;gap:16px;margin-top:40px}
+@media(min-width:860px){.tam{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--blanco);border-radius:28px;padding:30px 26px;position:relative;overflow:hidden}
+.card .ico{font-size:2.4rem;line-height:1}
+.card h3{font-size:1.7rem;margin:14px 0 6px}
+.card p{color:var(--gris)}
+.card:nth-child(2){background:var(--negro);color:#fff}
+.card:nth-child(2) p{color:#c9d2ce}
+.incluye{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px;list-style:none}
+.incluye li{background:var(--menta);padding:8px 16px;border-radius:999px;font-weight:600}
+
+/* Galería carrusel */
+.mimados{background:var(--blanco);padding-left:0;padding-right:0}
+.mimados h2,.mimados .sub{padding:0 var(--pad)}
+.sub{color:var(--gris);margin-top:12px}
+.track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:30px var(--pad) 10px;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.track figure{flex:0 0 min(64vw,280px);scroll-snap-align:start;border-radius:24px;overflow:hidden;aspect-ratio:3/4;background:var(--menta)}
+.track img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease-out)}
+@media(hover:hover){.track figure:hover img{transform:scale(1.05)}}
+
+/* Boutique */
+.boutique{display:grid;gap:30px;align-items:center}
+@media(min-width:860px){.boutique{grid-template-columns:1fr 1fr}}
+.bt-fotos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bt-fotos img{border-radius:22px;width:100%;aspect-ratio:3/4;object-fit:cover}
+.bt-fotos img:first-child{margin-top:32px}
+.boutique p{color:var(--gris);margin:16px 0 26px;max-width:40ch}
+
+/* Reserva */
+.reserva{background:var(--negro);color:#fff;border-radius:36px;margin:0 var(--pad) clamp(64px,10vw,120px);padding:clamp(36px,6vw,72px)}
+.reserva h2{color:#fff}
+.pasos{list-style:none;display:grid;gap:14px;margin:26px 0 32px;max-width:520px}
+.pasos li{display:flex;gap:14px;align-items:center}
+.pasos li span{flex:0 0 36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--menta);color:var(--negro);font:700 1rem "Fredoka"}
+.reserva .btn{background:var(--menta);color:var(--negro)}
+
+footer{padding:40px var(--pad) 110px;text-align:center;color:var(--gris);display:grid;gap:8px;justify-items:center}
+
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.2);transition:transform .2s var(--ease-out)}
+.wa-float:active{transform:scale(.92)}
+.wa-float.nudge{animation:nudge .8s var(--ease-out) 2}
+@keyframes nudge{0%,100%{transform:none}30%{transform:translateY(-6px) rotate(-8deg)}60%{transform:rotate(5deg)}}
+
+.js [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease-soft),transform .8s var(--ease-soft)}
+.js [data-reveal].is-in{opacity:1;transform:none}
+.js [data-stagger]>*{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out);transition-delay:calc(var(--i,0)*80ms)}
+.js [data-stagger].is-in>*{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){@keyframes pop{from{opacity:0}}.wa-float.nudge{animation:none}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="#top"><b aria-hidden="true">🐩</b>Estetican</a>
+  <a class="btn btn--sm" href="#reserva">Reservar</a>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div>
+      <h1><span style="--i:0">Baño,</span> <span style="--i:1">corte</span> <span style="--i:2">y muchos</span> <span style="--i:3">mimos</span></h1>
+      <p>Peluquería canina y boutique en Montevideo. Un lugar seguro y de confianza, hecho por amor a los perros.</p>
+      <div class="hero-cta">
+        <a class="btn" href="https://wa.me/59899126253?text=Hola%20Estetican!%20Quiero%20reservar%20un%20turno%20para%20mi%20perro." target="_blank" rel="noopener">Reservar turno</a>
+        <a class="btn btn--soft" href="#mimados">Ver a los mimados</a>
+      </div>
+    </div>
+    <div class="blob">
+      <img src="img/pomeranias.webp" alt="Dos pomeranias recién bañados y peinados en Estetican" width="361" height="640" fetchpriority="high">
+      <span class="paw a" aria-hidden="true">🐾</span><span class="paw b" aria-hidden="true">🐾</span>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-reveal>Para perros de todos los tamaños</h2>
+    <div class="tam" data-stagger>
+      <article class="card"><div class="ico" aria-hidden="true">🐶</div><h3>Chicos</h3><p>Yorkies, pomeranias, caniches y compañía. Baño, corte y peinado con paciencia.</p></article>
+      <article class="card"><div class="ico" aria-hidden="true">🐕</div><h3>Medianos</h3><p>Baño completo, secado y corte según la raza o como te guste.</p></article>
+      <article class="card"><div class="ico" aria-hidden="true">🦮</div><h3>Grandes</h3><p>Goldens, collies, chow chows y los más peludos: también los dejamos impecables.</p></article>
+    </div>
+    <ul class="incluye" data-stagger>
+      <li>Baño</li><li>Secado</li><li>Corte</li><li>Peinado</li><li>Mucho cariño</li>
+    </ul>
+    <p class="sub" data-reveal>El precio depende del tamaño y del pelo de tu perro. Consultalo por WhatsApp.</p>
+  </section>
+
+  <section class="mimados" id="mimados">
+    <h2 data-reveal>Nuestros mimados</h2>
+    <p class="sub" data-reveal>Algunos de los que pasaron por Estetican. Más en <a href="https://www.instagram.com/estetican.uy/" target="_blank" rel="noopener">@estetican.uy</a></p>
+    <div class="track">
+      <figure><img src="img/golden.webp" alt="Golden retriever recién bañado" width="640" height="396" loading="lazy"></figure>
+      <figure><img src="img/yorkie-logo.webp" alt="Yorkshire terrier en Estetican" width="361" height="640" loading="lazy"></figure>
+      <figure><img src="img/secado.webp" alt="Perro durante el secado" width="361" height="640" loading="lazy"></figure>
+      <figure><img src="img/frenchie.webp" alt="Bulldog francés feliz" width="361" height="512" loading="lazy"></figure>
+      <figure><img src="img/rocco.webp" alt="Rocco, perro grande y mimoso" width="361" height="512" loading="lazy"></figure>
+      <figure><img src="img/labrador.webp" alt="Labrador negro en Estetican" width="361" height="499" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="boutique">
+    <div class="bt-fotos" data-stagger>
+      <img src="img/impermeable.webp" alt="Perrita con impermeable de la boutique" width="360" height="500" loading="lazy">
+      <img src="img/mantas.webp" alt="Mantas a cuadros para perros" width="360" height="320" loading="lazy">
+    </div>
+    <div>
+      <h2 data-reveal>Boutique para tu perro</h2>
+      <p data-reveal>Ropa, camperas impermeables, mantitas para el frío y accesorios. Preguntanos qué hay en stock y retiralo cuando venga a bañarse.</p>
+      <a class="btn" href="https://wa.me/59899126253?text=Hola%20Estetican!%20Quiero%20consultar%20por%20la%20boutique." target="_blank" rel="noopener">Consultar boutique</a>
+    </div>
+  </section>
+
+  <section class="reserva" id="reserva">
+    <h2 data-reveal>Reservá el turno de tu perro</h2>
+    <ol class="pasos" data-stagger>
+      <li><span>1</span>Escribinos por WhatsApp.</li>
+      <li><span>2</span>Contanos la raza, el tamaño y qué le querés hacer.</li>
+      <li><span>3</span>Te pasamos día, horario y precio.</li>
+    </ol>
+    <a class="btn" href="https://wa.me/59899126253?text=Hola%20Estetican!%20Quiero%20reservar%20un%20turno%20para%20mi%20perro." target="_blank" rel="noopener">099 126 253</a>
+  </section>
+</main>
+
+<footer>
+  <a class="logo" href="#top"><b aria-hidden="true">🐩</b>Estetican</a>
+  <p>Boutique y peluquería canina · Montevideo</p>
+  <p><a href="https://www.instagram.com/estetican.uy/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/ESTETICAN.UY/" target="_blank" rel="noopener">Facebook</a> · <a href="https://wa.me/59899126253" target="_blank" rel="noopener">WhatsApp</a></p>
+</footer>
+
+<a class="wa-float" href="https://wa.me/59899126253?text=Hola%20Estetican!%20Quiero%20reservar%20un%20turno%20para%20mi%20perro." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1-.3-.1-.5-.2-.7.1l-1 1.3c-.2.2-.4.2-.7 0a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6 0-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.9 5.2 2.2.9 3 1 4.1.8.7-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5l-.6-.4z"/></svg>
+</a>
+
+<script>
+function safe(fn,n){try{fn()}catch(e){console.warn('['+n+']',e)}}
+safe(function(){
+  document.documentElement.classList.add('js');
+  var sel='[data-reveal],[data-stagger]';
+  document.querySelectorAll('[data-stagger]').forEach(function(p){[].slice.call(p.children).forEach(function(c,i){c.style.setProperty('--i',i)})});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target)}})},{threshold:.01,rootMargin:'0px 0px -2% 0px'});
+  document.querySelectorAll(sel).forEach(function(el){io.observe(el)});
+  setTimeout(function(){document.querySelectorAll(sel).forEach(function(el){el.classList.add('is-in')})},6000);
+},'reveal');
+safe(function(){var nav=document.querySelector('.nav');var on=function(){nav.classList.toggle('is-scrolled',scrollY>60)};on();addEventListener('scroll',on,{passive:true})},'nav');
+setTimeout(function(){var b=document.querySelector('.wa-float');if(b)b.classList.add('nudge')},9000);
+</script>
+</body>
+</html>
